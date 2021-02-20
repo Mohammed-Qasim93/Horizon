@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { theme } from "./ui/theme";
-import { Grid, Hidden, Typography } from "@material-ui/core";
+import { Grid, Hidden, Typography, Paper } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import Facebook from "../img/facebook.svg";
 import Instagram from "../img/instagram.svg";
@@ -36,7 +36,7 @@ const useStyles = makeStyles({
     position: "absolute",
     textAlign: "center",
     backgroundColor: theme.palette.primary.dark,
-    padding: "10px",
+    padding: "10px 0px",
     direction: "ltr",
   },
   icon: {
@@ -45,7 +45,6 @@ const useStyles = makeStyles({
   },
   socialGrid: {
     position: "absolute",
-    // marginTop: "-6em",
     bottom: "50px",
     left: "1.5em",
   },
@@ -59,6 +58,21 @@ const Footer = ({ value, setValue }) => {
       <Grid container>
         <Hidden smDown>
           <Grid container justify='center' className={classes.gridContainer}>
+            <Grid item className={classes.gridItem}>
+              <Grid container direction='column' spacing={2}>
+                <Grid
+                  item
+                  onClick={() => setValue(0)}
+                  component={Link}
+                  to='/'
+                  className={classes.link}>
+                  الافق للتطوير
+                </Grid>
+                <Grid item className={classes.link}>
+                  لتصميم وبرمجة المواقع والتطبيقات
+                </Grid>
+              </Grid>
+            </Grid>
             <Grid item className={classes.gridItem}>
               <Grid container direction='column' spacing={2}>
                 <Grid
@@ -137,7 +151,6 @@ const Footer = ({ value, setValue }) => {
           <img src={Instagram} alt='Instagram Logo' className={classes.icon} />
         </Grid>
       </Grid>
-
       <Typography variant='body2' className={classes.copyRight}>
         جميع الحقوق محفوظة &copy; {today}
       </Typography>

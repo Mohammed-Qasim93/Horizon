@@ -15,7 +15,6 @@ export const theme = createMuiTheme({
   },
   tab: {
     fontFamily: "Almarai",
-    textTransform: "capitalize",
   },
   buttonContainer: {
     borderRadius: 0,
