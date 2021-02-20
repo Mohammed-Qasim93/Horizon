@@ -35,7 +35,7 @@ const useStyles = makeStyles({
     height: "20px",
   },
   gridContainer: {
-    height: "100%",
+    height: "90%",
     alignItems: "center",
   },
 });
@@ -50,27 +50,50 @@ const Home = () => {
           className={classes.gridContainer}
           justify='space-around'>
           <Grid item>
-            <Typography className={classes.typography} variant='h2'>
-              مرحباً بك في الأفق للتطوير
-            </Typography>
-            <Typical
-              className={classes.typeWritting}
-              loop={Infinity}
-              wrapper='p'
-              steps={[
-                "حيث كل أحلامك تصبح حقيقة...",
-                2500,
-                "تواصل معنا لا تتردد.",
-                2500,
-              ]}
-            />
-            <Button
-              variant='contained'
-              color='primary'
-              className={classes.contactButton}
-              size='large'>
-              اتصل بنا
-            </Button>
+            <Grid
+              container
+              direction='column'
+              alignItems='flex-start'
+              spacing={8}>
+              <Grid item>
+                <Typography className={classes.typography} variant='h2'>
+                  مرحباً بك في الأفق للتطوير
+                </Typography>
+                <Typical
+                  className={classes.typeWritting}
+                  loop={Infinity}
+                  wrapper='p'
+                  steps={[
+                    "حيث كل أحلامك تصبح حقيقة...",
+                    2500,
+                    "تواصل معنا لا تتردد.",
+                    2500,
+                  ]}
+                />
+              </Grid>
+              <Grid item>
+                <Grid container spacing={1}>
+                  <Grid item>
+                    <Button
+                      variant='contained'
+                      color='primary'
+                      className={classes.contactButton}
+                      size='large'>
+                      اتصل بنا
+                    </Button>
+                  </Grid>
+                  <Grid item>
+                    <Button
+                      variant='outlined'
+                      color='primary'
+                      className={classes.contactButton}
+                      size='large'>
+                      اعرف المزيد
+                    </Button>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
           </Grid>
           <Grid item></Grid>
         </Grid>
